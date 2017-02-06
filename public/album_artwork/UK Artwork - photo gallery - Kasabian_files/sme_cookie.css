@@ -1,0 +1,61 @@
+.sme_cookie { background-image: none; background: #000; color: #fff; padding: 25px 10px; text-align: left; z-index: 9999999999; letter-spacing: normal; text-indent: 0px; vertical-align: baseline; word-spacing: normal; white-space: normal; display: block; margin: 0px; clear: both; float: none; height: auto; width: 100%; border: 0px none #000; list-style-type: none; font: normal 14px/normal "Trebuchet MS", Arial, Helvetica, sans-serif; text-transform: none; text-decoration: none; }
+
+.sme_cookie, .sme_cookie > * { -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.sme_cookie a, a.sme_cookie_content, .sme_cookie a:link, .sme_cookie a:visited { color: #fff; text-decoration: underline; font: italic normal 100%/normal "Trebuchet MS", Arial, Helvetica, sans-serif; text-transform: none; background: transparent; background-image: none; display: inline; letter-spacing: normal; text-align: left; text-indent: 0px; vertical-align: baseline; word-spacing: normal; white-space: normal; margin: auto; clear: none; float: none; height: auto; width: auto; border: 0px none #000; }
+
+.sme_cookie a:hover, .sme_cookie a:focus { outline: 0; text-decoration: none; font: italic normal 100%/normal "Trebuchet MS", Arial, Helvetica, sans-serif; text-transform: none; color: #FFF; background: transparent; background-image: none; letter-spacing: normal; text-align: left; text-indent: 0px; vertical-align: baseline; word-spacing: normal; white-space: normal; display: inline; margin: auto; clear: none; float: none; height: auto; width: auto; border: 0px none #000; list-style-type: none; position: relative; border: 0px none #000; }
+
+.sme_cookie .sme_cookie_container { width: 980px; max-width: 100%; margin: 0 auto; position: relative; }
+
+.sme_cookie.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.sme_cookie.bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;   
+}
+
+.sme_cookie .sme_cookie_title { text-align: left; display: block; text-transform: uppercase; padding: 0; color: #fff; font: bold normal 20px/normal "Trebuchet MS", Arial, Helvetica, sans-serif; text-decoration: none; background: transparent; background-image: none; letter-spacing: normal; text-indent: 0px; vertical-align: middle; word-spacing: normal; white-space: normal; margin: 0 auto 10px; clear: none; float: none; height: auto; width: auto; border: 0px none #000; list-style-type: none; position: relative; }
+.sme_cookie .sme_cookie_content { text-align: left; display: block; text-transform: none; padding: 0; color: #fff; font: 300 normal 14px/normal "Trebuchet MS", Arial, Helvetica, sans-serif; text-decoration: none; background: transparent; background-image: none; letter-spacing: normal; text-indent: 0px; vertical-align: middle; word-spacing: normal; white-space: normal; margin: 0 auto 10px; clear: none; float: none; height: auto; width: auto; border: 0px none #000; list-style-type: none; position: relative; }
+
+.sme_cookie #sme_cookie_close:link, .sme_cookie #sme_cookie_close:visited { display: inline-block; padding: 5px; border: 1px solid #fff; position: absolute; top: 0; right: 0; text-decoration: none; font: normal 12px/1em "Trebuchet MS", Arial, Helvetica, sans-serif; text-transform: uppercase; color: #FFF; background: transparent; background-image: none; letter-spacing: normal; text-align: center; text-indent: 0px; vertical-align: middle; word-spacing: normal; white-space: normal; margin: 0px; clear: both; float: none; height: auto; width: auto; list-style-type: none; }
+
+.sme_cookie #sme_cookie_close:hover { display: inline-block; padding: 5px; border: 1px solid #fff; position: absolute; top: 0; right: 0; text-decoration: none; font: normal 12px/1em "Trebuchet MS", Arial, Helvetica, sans-serif; text-transform: uppercase; color: #000; background: #FFF; background-image: none; letter-spacing: normal; text-align: center; text-indent: 0px; vertical-align: middle; word-spacing: normal; white-space: normal; margin: 0px; clear: both; float: none; height: auto; width: auto; list-style-type: none; }
+
+.sme_cookie #sme_cookie_accept:link, .sme_cookie #sme_cookie_accept:visited { display: inline-block; padding: 5px 10px; border: 1px solid #fff; text-decoration: none; text-transform: uppercase; font: 500 normal 18px/1em "Trebuchet MS", Arial, Helvetica, sans-serif; color: #FFF; background: transparent; background-image: none; letter-spacing: normal; text-align: center; text-indent: 0px; vertical-align: middle; word-spacing: normal; white-space: normal; margin: 10px auto auto; clear: none; float: none; height: auto; width: auto; }
+.sme_cookie #sme_cookie_accept:hover { display: inline-block; padding: 5px 10px; border: 1px solid #fff; text-decoration: none; text-transform: uppercase; font: 500 normal 18px/1em "Trebuchet MS", Arial, Helvetica, sans-serif; color: #000; background: #FFF; background-image: none; letter-spacing: normal; text-align: center; text-indent: 0px; vertical-align: middle; word-spacing: normal; white-space: normal; margin: 10px auto auto; clear: none; float: none; height: auto; width: auto; }
+
+.sme_cookie.sme_cookie_scheme_light {
+    background: #fff;
+    color: #000;
+}
+
+.sme_cookie.sme_cookie_scheme_light a {
+    color: #000;
+}
+
+.sme_cookie.sme_cookie_scheme_light #sme_cookie_close {
+    border: 1px solid #000;
+}
+
+.sme_cookie.sme_cookie_scheme_light #sme_cookie_accept {
+    border: 1px solid #000;
+}
+
+
+@media only screen and (max-width: 414px) { 
+
+.sme_cookie { font: normal 12px/normal "Trebuchet MS", Arial, Helvetica, sans-serif; }
+.sme_cookie .sme_cookie_title { font: bold normal 18px/normal "Trebuchet MS", Arial, Helvetica, sans-serif; }
+.sme_cookie .sme_cookie_content { font: 300 normal 12px/normal "Trebuchet MS", Arial, Helvetica, sans-serif; }
+.sme_cookie #sme_cookie_accept:link, .sme_cookie #sme_cookie_accept:visited, .sme_cookie #sme_cookie_accept:hover { display: block; font: 500 normal 18px/1em "Trebuchet MS", Arial, Helvetica, sans-serif; }
+
+
+ }
