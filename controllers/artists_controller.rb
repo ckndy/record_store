@@ -2,7 +2,6 @@ require ('sinatra')
 require ('sinatra/contrib/all')
 require_relative('../models/artist.rb')
 
-
 #index
 get '/artists' do
   @artists = Artist.all()

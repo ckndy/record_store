@@ -16,6 +16,13 @@ def save()
   @id = results.first()['id'].to_i
 end
 
+def albums()
+   sql = "SELECT * FROM albums WHERE artist_id = #{ @id }"
+   albums = SqlRunner.run( sql )
+   result = albums.map { |hash| Album.new( hash ) }
+   return result
+ end
+
 def self.all()
   sql = "SELECT * FROM artists"
   results = SqlRunner.run( sql )
@@ -28,9 +35,8 @@ def self.find( id )
   return Artist.new( results.first )
 end
 
-def self.delete_all
-  sql = "DELETE FROM artists"
+def self.destroy(id)
+  sql = "DELETE FROM artists WHERE id=#{id}"
   SqlRunner.run( sql )
-  end
-
+end
 end
