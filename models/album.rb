@@ -1,18 +1,23 @@
-require_relative('../db/sql_runner')
+require_relative('../db/SqlRunner')
 
 class Album
 
-attr_reader :id :title, :genre, :quantity, :artist_id
+attr_reader :id, :title, :genre, :quantity, :artist_id
 
 def initialize( options )
   @id = nil || options['id'].to_i
   @title = options['title']
   @genre = options['genre']
   @quantity = options['quantity'].to_i
-  @artist_id = options[artist_id]
+  @artist_id = options['artist_id']
+end
+
+def total()
+  return @quantity * 10
+end
 
 def save()
-  sql = "INSERT INTO albums (title, artist_id) VALUES ('#{@title}') RETURNING *;"
+  sql = "INSERT INTO albums (title, artist_id) VALUES ('#{@title}', '#{@artist_id}') RETURNING *;"
   results = SqlRunner.run(sql)
   @id = results.first()['id'].to_i
 end
@@ -45,4 +50,10 @@ def self.destroy( id )
     sql = "DELETE FROM albums WHERE id=#{id}"
     SqlRunner.run( sql )
   end
+
+  def self.delete_all()
+    sql = "DELETE FROM albums;"
+    SqlRunner.run(sql)
+end
+
 end

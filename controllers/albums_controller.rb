@@ -1,46 +1,49 @@
-require ('sinatra')
-require ('sinatra/contrib/all')
-require_relative('../models/albums.rb')
+require( 'sinatra' )
+require( 'sinatra/contrib/all' )
+require( 'pry-byebug' )
 
-#index
+require_relative('../models/album')
+
+#INDEX
 get '/albums' do
   @albums = Album.all()
-  erb(:"albums/index")
+  erb (:index)
 end
 
-#new
+#NEW
 get '/albums/new' do
   @artists = Artist.all()
-  erb(:"albums/new")
+  erb (:new)
 end
 
-#create
+#CREATE
 post '/albums' do
   @album = Album.new(params)
   @album.save()
-  erb(:"albums/create")
+  erb (:create)
 end
 
-#show
+#SHOW
 get '/albums/:id' do
   @album = Album.find(params[:id])
-  erb(:"albums/show")
+  erb (:show)
 end
 
-#edit
+#DELETE
+post '/albums/:id/delete' do
+  Album.destroy(params[:id])
+  redirect to('/albums')
+end
+
+#EDIT
 get '/albums/:id/edit' do
   @album = Album.find(params[:id])
-  erb(:"albums/edit")
+  erb (:edit)
 end
 
-#update
+#UPDATE
 put '/albums/:id' do
   @album = Album.update(params)
   redirect to("/albums/#{params[:id]}")
 end
 
-#delete
-delete '/albums/:id' do
-  Album.destroy(params[:id])
-  redirect to("/albums")
-end

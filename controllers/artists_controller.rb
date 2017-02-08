@@ -1,45 +1,48 @@
-require ('sinatra')
-require ('sinatra/contrib/all')
-require_relative('../models/artist.rb')
+require( 'sinatra' )
+require( 'sinatra/contrib/all' )
+require( 'pry-byebug' )
 
-#index
+require_relative('../models/artist')
+
+#INDEX
 get '/artists' do
   @artists = Artist.all()
-  erb(:"artists/index")
+  erb (:"artists/index")
 end
 
-#new
+#NEW
 get '/artists/new' do
-  erb(:"artists/new")
+  erb (:new)
 end
 
-#create
+#CREATE
 post '/artists' do
   @artist = Artist.new(params)
-  @artist.save()
-  erb(:"artists/create")
+  @artist.save
+  erb (:create)
 end
 
-#show
+#SHOW
 get '/artists/:id' do
   @artist = Artist.find(params[:id])
-  erb(:"artists/show")
+  erb (:show)
 end
 
-#edit
+#DELETE
+post '/artists/:id/delete' do
+  Artist.destroy(params[:id])
+  redirect to('/artists')
+end
+
+#EDIT
 get '/artists/:id/edit' do
   @artist = Artist.find(params[:id])
-  erb(:"artists/edit")
+  erb (:edit)
 end
 
-#update
-put '/artists/:id' do
-  @artist = Artist.update(params)
-  redirect to("/artists/#{params[:id]}")
+#UPDATE
+post '/artists/:id' do 
+@artist = Artist.update(params)
+redirect to ("/artists/#{params[:id]}")
 end
 
-#delete
-delete '/artists/:id' do
-  Artist.destroy(params[:id])
-  redirect to("/artists")
-end

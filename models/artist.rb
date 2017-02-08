@@ -1,4 +1,4 @@
-require_relative('../db/sql_runner')
+require_relative('../db/SqlRunner')
 
 class Artist
 
@@ -11,7 +11,7 @@ def initialize(options)
 end
 
 def save()
-  sql = "INSERT INTO artist (name) VALUES ('#{@name}') RETURNING *;"
+  sql = "INSERT INTO artists (name) VALUES ('#{@name}') RETURNING *;"
   results = SqlRunner.run(sql)
   @id = results.first()['id'].to_i
 end
@@ -38,5 +38,11 @@ end
 def self.destroy(id)
   sql = "DELETE FROM artists WHERE id=#{id}"
   SqlRunner.run( sql )
+end
+
+
+def self.delete_all()
+  sql = "DELETE FROM artists;"
+  SqlRunner.run(sql)
 end
 end
